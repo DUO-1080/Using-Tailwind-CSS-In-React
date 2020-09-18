@@ -2,13 +2,22 @@
 
 ### 1. create react project
 
+```
+touch .env
+
+// .env
+SKIP_PREFLIGHT_CHECK=true
+```
+
+
+
 ### 2. install tailwind and tools
 
 ```bash
 npm install tailwindcss postcss-cli autoprefixer -D
 ```
 
-### 3. setup tailwind source file ( src/tailwind.css )
+### 3. setup tailwind source file ( src/styles/tailwind.css )
 
 ```
 @tailwind base;
@@ -35,7 +44,7 @@ in `post.config.js`
 ```js
 const tailwindcss = require("tailwindcss");
 module.exports = {
-  plugins: [tailwindcss("./tailwind.js"), require("autoprefixer")],
+  plugins: [tailwindcss("./tailwind.config.js"), require("autoprefixer")],
 };
 ```
 
@@ -69,4 +78,5 @@ module.exports = {
 };
 ```
 
-> Now whenever you compile your CSS with `NODE_ENV` set to `production`, Tailwind will automatically purge unused styles from your CSS.
+> Now whenever you compile your CSS with `NODE_ENV` set to `production`, Tailwind will automatically purge unused styles from your CSS.np
+
